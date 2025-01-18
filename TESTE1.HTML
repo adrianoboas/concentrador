@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENDEREÇO DAS ESTAÇÕES ES</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        #searchInput {
+            margin-bottom: 12px;
+            padding: 8px;
+            width: 50%;
+        }
+    </style>
+    <script>
+        function searchTable() {
+            const input = document.getElementById("searchInput");
+            const filter = input.value.toUpperCase();
+            const table = document.getElementById("dataTable");
+            const rows = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < rows.length; i++) { // Loop começa em 1 para ignorar o cabeçalho
+                const cells = rows[i].getElementsByTagName("td");
+                let found = false;
+
+                for (let j = 0; j < cells.length; j++) {
+                    const cell = cells[j];
+                    if (cell.textContent.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
+                    }
+                }
+
+                if (found) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h2>ENDEREÇO DAS ESTAÇÕES ES</h2>
+
+    <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Pesquisar na tabela..." />
+
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>Sigla</th>
+                <th>Cidade</th>
+                <th>Endereço</th>
+                <th>Bairro</th>
+            </tr>
+        </thead>
+        <tbody>
+           <tr><td>AAA EBT</td><td>APIACA</td><td>R VEREADOR DANIEL TABEELDI S/N </td><td>CENTRO</td></tr>
+<tr><td>AAA MTL</td><td>APIACA</td><td>R MARECHAL CANDIDO RONDON 0 </td><td>CENTRO</td></tr>
+<tr><td>ACZ AG</td><td>ARACRUZ</td><td>AV ARISTIDES GUARANA 137 </td><td>CENTRO</td></tr>
+<tr><td>ACZ BR</td><td>ARACRUZ</td><td>ROD ARACRUZ - BARRA DO RIACHO KM 25 </td><td>BARRA DO RIACHO</td></tr>
+<tr><td>ACZ CEL</td><td>ARACRUZ</td><td>ROD ES-010 S/N </td><td>COQUEIRAL DE ARACRUZ</td></tr>
+<tr><td>ACZ GAG</td><td>ARACRUZ</td><td>R GENERAL ARISTIDES GUARANA LT 05 - QD B </td><td>CENTRO</td></tr>
+<tr><td>ACZ TBS</td><td>ARACRUZ</td><td>R TOLENTINO BISPO DA SILVA SN </td><td>JEQUITIBA</td></tr>
+<tr><td>AHE 0ED</td><td>ANCHIETA</td><td>R FELICIANO GARCIA S/N </td><td>JARDIM DAS OLIVEIRAS</td></tr>
+<tr><td>AHE DGF</td><td>ANCHIETA</td><td>ROD DOS CASTELHANOS, KM 1,5 S/N </td><td>ALEGRE</td></tr>
+<tr><td>AHE EBT</td><td>ANCHIETA</td><td>AV RAUTA S/N </td><td>CENTRO</td></tr>
+<tr><td>AHE EMB</td><td>ANCHIETA</td><td>R ROSA BRANCA LOTE N - 40 </td><td>IRIRI</td></tr>
+<tr><td>ALR ALG</td><td>ALEGRE</td><td>R PROJETADA DO CAMPO DE AVIAÇÃO S/N </td><td>CENTRO</td></tr>
+<tr><td>ALR MCO</td><td>ALEGRE</td><td>EST DO MORRO DO CRUZEIRO S/N </td><td>BAIRRO DO CRUZEIRO</td></tr>
+<tr><td>ALR SSC</td><td>ALEGRE</td><td>SER SANTA CATARINA S/N </td><td>ZONA RURAL</td></tr>
+<tr><td>ARV RPM</td><td>ALTO RIO NOVO</td><td>R PAULO MARTINS S/N </td><td>CENTRO</td></tr>
+<tr><td>ARV RRN</td><td>ALTO RIO NOVO</td><td>CRG CORREGO AGUA LIMPA S/N </td><td>ZONA RURAL</td></tr>
+<tr><td>AVQ AV7</td><td>ATILIO VIVACQUA</td><td>R PROJETADA S/N </td><td>CENTRO</td></tr>
+<tr><td>AVQ CF</td><td>ATILIO VIVACQUA</td><td>R CAROLINA FRAGA 32 </td><td>CENTRO</td></tr>
+<tr><td>AVQ ST</td><td>ATILIO VIVACQUA</td><td>MRO SERRA DA TIJUCA S/N </td><td>ZONA RURAL</td></tr>
+<tr><td>BDI BD6</td><td>BARRA DE SAO FRANCISCO</td><td>R MANOEL LOPES DA SILVA S/N </td><td>CENTRO</td></tr>
+<tr><td>BDI BMF</td><td>BARRA DE SAO FRANCISCO</td><td>R 29 S/N </td><td>MORADA FELIZ</td></tr>
+<tr><td>BDI GF</td><td>BARRA DE SAO FRANCISCO</td><td>R GUMERCINDA FARIAS S/N </td><td>BAMBE</td></tr>
+<tr><td>BSE RMB</td><td>BOM JESUS DO NORTE</td><td>R MAJOR BARBOSA 10 </td><td>CENTRO</td></tr>
+<tr><td>BXG AB</td><td>BAIXO GUANDU</td><td>MRO DA ASSOCIACAO BANESTES S/N </td><td>ZONA RURAL</td></tr>
+<tr><td>BXG BX2</td><td>BAIXO GUANDU</td><td>R SANTOS DUMONT S/N </td><td>CENTRO</td></tr>
+<tr><td>CAVN MC</td><td>JOAO NEIVA</td><td>MRO CAVALINHO S/N </td><td>ZONA RURAL</td></tr>
+<tr><td>CCA CL5</td><td>CARIACICA</td><td>ROD GOVERNADOR JOSE HENRIQUE SETTE S/N </td><td>PLANETA</td></tr>
+<tr><td>CCA CLC</td><td>CARIACICA</td><td>ROD BR-101 NORTE - CONTORNO - LADO PAR 294 </td><td>TABAJARA</td></tr>
+<tr><td>CCA CMX</td><td>CARIACICA</td><td>ROD BR 101, KM 281 S/N </td><td>PORTO ENGENHO</td></tr>
+<tr><td>CCA EB</td><td>CARIACICA</td><td>R CINQUENTA E NOVE SN </td><td>NOVA ROSA DA PENHA I</td></tr>
+<tr><td>CCA EBT</td><td>CARIACICA</td><td>ROD BR 262 6555 </td><td>VILA CAPIXABA</td></tr>
+<tr><td>CCA EY</td><td>CARIACICA</td><td>R DO MORRO S/N </td><td>FLEXAL</td></tr>
+<tr><td>CCA JAS</td><td>CARIACICA</td><td>R JOSE ANTONIO DA SILVA 85 </td><td>CANTO FELIZ</td></tr>
+<tr><td>CCA JPR</td><td>CARIACICA</td><td>R JOSE PRADO 10 </td><td>CASTELO BRANCO</td></tr>
+<tr><td>CCA ONL</td><td>CARIACICA</td><td>R ONOFRE DE OLIVEIRA S/N </td><td>AREINHA</td></tr>
+<tr><td>CCA PCS</td><td>CARIACICA</td><td>R PRES COSTA E SILVA 33 </td><td>APARECIDA</td></tr>
+<tr><td>CCA PIN</td><td>CARIACICA</td><td>R PINHEIROS S/N </td><td>CAMPO BELO</td></tr>
+<tr><td>CCA VDL</td><td>CARIACICA</td><td>ROD BR-101 KM 294 </td><td>PORTO ENGENHO</td></tr>
+<tr><td>CCA VEA</td><td>CARIACICA</td><td>AV PERIMETRAL S/N </td><td>VALE DA ESPERANCA</td></tr>
+<tr><td>CIM 0I9</td><td>CACHOEIRO DE ITAPEMIRIM</td><td>R RESK SALIM CARONE 22 </td><td>GILBERTO MACHADO</td></tr>
+<tr><td>CIM AEO</td><td>CACHOEIRO DE ITAPEMIRIM</td><td>AV FRANCISCO MARDEGAN KM 1 </td><td>AEROPORTO</td></tr>
+<tr><td>CIM GTR</td><td>CACHOEIRO DE ITAPEMIRIM</td><td>R GLADISTONE RUBIM LOTE 07 </td><td>SUMARE</td></tr>
+<tr><td>CIM MSA</td><td>CACHOEIRO DE ITAPEMIRIM</td><td>MRO DAS ANDORINHAS S/N </td><td>ZONA RURAL</td></tr>
+<tr><td>CIM PSJ</td><td>CACHOEIRO DE ITAPEMIRIM</td><td>PC SAO JOAO 7 </td><td>CENTRO</td></tr>
+<tr><td>CNA ERG</td><td>COLATINA</td><td>MRO GUARANI S/N </td><td>ZONA RURAL</td></tr>
+<tr><td>CNA GV</td><td>COLATINA</td><td>AV GETULIO VARGAS 500 </td><td>CENTRO</td></tr>
+<tr><td>CNA SSO</td><td>COLATINA</td><td>R ABEL GONCALVES LORDEIRO S/N </td><td>JOSE DE ANCHIETA</td></tr>
+<tr><td>CSE NSP</td><td>CASTELO</td><td>AV NS SRA DA PENHA 815 </td><td>CENTRO</td></tr>
+<tr><td>CSE TV</td><td>CASTELO</td><td>EST DO MORRO DA TV S/N </td><td>ZONA RURAL</td></tr>
+<tr><td>DGM ACE</td><td>DOMINGOS MARTINS</td><td>AV MÓDULO S/N </td><td>PEDRA AZUL DE ARACE</td></tr>
+<tr><td>DGM BM</td><td>DOMINGOS MARTINS</td><td>R BERNARDINO MONTEIRO S/N </td><td>CENTRO</td></tr>
+<tr><td>DGM JMB</td><td>DOMINGOS MARTINS</td><td>EST DO SUIDO S/N </td><td>ZONA RURAL</td></tr>
+<tr><td>DRR EBT</td><td>DORES DO RIO PRETO</td><td>LOT JOSÉ NUNES S/N </td><td>CENTRO</td></tr>
+<tr><td>DRR MTL</td><td>DORES DO RIO PRETO</td><td>R PEDRO ALCANTARA GALVEAS 0 </td><td>CENTRO</td></tr>
+<tr><td>DVD EBT</td><td>DIVINO DE SAO LOURENCO</td><td>R HELINDA F. CARVALHO S/N </td><td>CENTRO</td></tr>
+<tr><td>ECG CDC</td><td>ECOPORANGA</td><td>COR DO CAFE S/N </td><td>ZONA RURAL</td></tr>
+<tr><td>ECG RHL</td><td>ECOPORANGA</td><td>R HELIO LEAL 96 </td><td>CENTRO</td></tr>
+<tr><td>FNO EBT</td><td>FUNDAO</td><td>R VITÓRIA RÉGIA S/N </td><td>CENTRO</td></tr>
+<tr><td>GRI LIV</td><td>GUARAPARI</td><td>R ANA PORTO SIMOES SN </td><td>PRAIA DO MORRO</td></tr>
+<tr><td>GRI MC</td><td>GUARAPARI</td><td>ROD BR-101 KM41 </td><td>TREVO GUARAPARI</td></tr>
+<tr><td>GRI MDC</td><td>GUARAPARI</td><td>MRO DO CÉU S/N </td><td>MUQUIÇABA</td></tr>
+<tr><td>GRI PDO</td><td>GUARAPARI</td><td>R NILZA TEREZA HOFFMAN PADUA S/N </td><td>CENTRO</td></tr>
+<tr><td>GRI ZF</td><td>GUARAPARI</td><td>R ZULEIMA FORTE FARIAS S/N </td><td>CENTRO</td></tr>
+<tr><td>GUU CMS</td><td>GUACUI</td><td>COND MEIRELES S/N </td><td>CENTRO</td></tr>
+<tr><td>GUU MC</td><td>GUACUI</td><td>R STA CRUZ OU CARACOL S/N </td><td>ZONA RURAL</td></tr>
+<tr><td>GUU MTL</td><td>GUACUI</td><td>R DEMERVAL AMARAL S/N </td><td>CENTRO</td></tr>
+<tr><td>IGW EBT</td><td>ITAGUACU</td><td>MRO TV S/N </td><td>BARRO PRETO</td></tr>
+<tr><td>IIH EBT</td><td>IBITIRAMA</td><td>R PROJETADA S/N </td><td>CENTRO</td></tr>
+<tr><td>IIU JA</td><td>IBIRACU</td><td>R JOAO ALVES DA M JUNIOR S/N </td><td>SEDE</td></tr>
+<tr><td>IIU RCM</td><td>IBIRACU</td><td>R CEZAR MATIUZZI S/N </td><td>CENTRO</td></tr>
+<tr><td>IKA EBT</td><td>IBATIBA</td><td>ROD BR 262, KM 162 S/N </td><td>MORRO DO CEMITERIO</td></tr>
+<tr><td>IKA TM</td><td>IBATIBA</td><td>AV MARIO ANDREAZZA 226 </td><td>CENTRO</td></tr>
+<tr><td>INW FMA</td><td>ITARANA</td><td>FAZ MATUTINA S/N </td><td>ZONA RURAL</td></tr>
+<tr><td>INW INA</td><td>ITARANA</td><td>LRG DA PALMEIRA S/N </td><td>CENTRO</td></tr>
+<tr><td>INW VDM</td><td>ITARANA</td><td>R VALENTIN DE MARTIN S/N </td><td>CENTRO</td></tr>
+<tr><td>IOH EBT</td><td>ICONHA</td><td>R ANTONIO MAURICIO PINTO KM 328 </td><td>UNIÃO</td></tr>
+<tr><td>IRUP EBT</td><td>IRUPI</td><td>R PREFEITO WELPHANE MACHADO S/N </td><td>CENTRO</td></tr>
+<tr><td>ITIP TM</td><td>ITAPEMIRIM</td><td>AV ITAPEMIRIM 502 </td><td>CENTRO</td></tr>
+<tr><td>ITNA HO</td><td>COLATINA</td><td>MRO DO HOLANDES S/N </td><td>ZONA RURAL</td></tr>
+<tr><td>IUN CTC</td><td>IUNA</td><td>CRG TERRA CORRIDA A N A/N </td><td>NOSSA SENHORA DAS GRACAS</td></tr>
+<tr><td>IUN EBT</td><td>IUNA</td><td>R PEDRO SCARDINI 6 </td><td>CENTRO</td></tr>
+<tr><td>IUN TM</td><td>IUNA</td><td>R ARMINTAS DE OLIVEIRA MATOS S/N </td><td>CENTRO</td></tr>
+<tr><td>JNV JPA</td><td>JOAO NEIVA</td><td>R JACINTA PALASSI DE ANGELI SN </td><td>CENTRO</td></tr>
+<tr><td>JUE UP</td><td>JAGUARE</td><td>R UIRAPURU 352 </td><td>CENTRO</td></tr>
+<tr><td>JUE UPU</td><td>JAGUARE</td><td>R UIRAPURU S/N </td><td>CENTRO</td></tr>
+<tr><td>LJT EBT</td><td>LARANJA DA TERRA</td><td>R OLAVO BILAC S/N </td><td>CENTRO</td></tr>
+<tr><td>LJT MTL</td><td>LARANJA DA TERRA</td><td>R PERMINIO ROGERIO S/N </td><td>CENTRO</td></tr>
+<tr><td>LNS BEB</td><td>LINHARES</td><td>ROD BR 101, KM 157 S/N </td><td>BEBEDOURO</td></tr>
+<tr><td>LNS CCS</td><td>LINHARES</td><td>EST POVOACAO DEGREDO KM 08 </td><td>DISTRITO POVOACAO</td></tr>
+<tr><td>LNS CL2</td><td>LINHARES</td><td>AV RUI BARBOSA S/N </td><td>CENTRO</td></tr>
+<tr><td>LNS FC</td><td>LINHARES</td><td>AV JOAO FELIPE CALMON 820 </td><td>CENTRO</td></tr>
+<tr><td>LNS LN1</td><td>LINHARES</td><td>R STA TEREZA S/N </td><td>NOVO HORIZONTE</td></tr>
+<tr><td>LNS MAS</td><td>LINHARES</td><td>AV MARTIN AFONSO DE SOUZA 2149 </td><td>INTERLAGOS</td></tr>
+<tr><td>LNS MV</td><td>LINHARES</td><td>ROD BR-101 KM 144 </td><td>CANIVETE</td></tr>
+<tr><td>LNS MVA</td><td>LINHARES</td><td>R JEQUITIBA S/N </td><td>MOVELAR</td></tr>
+<tr><td>LNS RVA</td><td>LINHARES</td><td>AV COMENDADOR RAFAEL S/N </td><td>CENTRO</td></tr>
+<tr><td>MAFL CBV</td><td>MARECHAL FLORIANO</td><td>R SEBASTIAO FRANCISCO PENHA S/N </td><td>CHACARA BELA VISTA</td></tr>
+<tr><td>MAFL EBT</td><td>MARECHAL FLORIANO</td><td>R CECILIA PITANGA S/N </td><td>CENTRO</td></tr>
+<tr><td>MAFL MF1</td><td>MARECHAL FLORIANO</td><td>R CECILIA PITANGA S/N </td><td>CENTRO</td></tr>
+<tr><td>MAFL VM</td><td>MARECHAL FLORIANO</td><td>ROD BR-262 KM.40 </td><td>BORBA GATO</td></tr>
+<tr><td>MIL RVG</td><td>MIMOSO DO SUL</td><td>R VITORIA DA GLORIA S/N </td><td>CENTRO</td></tr>
+<tr><td>MOA AHE</td><td>MONTANHA</td><td>R ANCHIETA S/N </td><td>JORDANOPOLIS</td></tr>
+<tr><td>MRW EBT</td><td>MARILANDIA</td><td>R OTAVIO PERIN S/N </td><td>CENTRO</td></tr>
+<tr><td>MRW VVO</td><td>MARILANDIA</td><td>AV DOM BOSCO - MORRO BIOTONICO S/N </td><td>ZONA RURAL</td></tr>
+<tr><td>MRZS EBT</td><td>MARATAIZES</td><td>R ANIBAL MACHADO S/N </td><td>ILMENITA</td></tr>
+<tr><td>MUC EBT</td><td>MUCURICI</td><td>AV NS SRA DA PENHA S/N </td><td>ALTO BONITO</td></tr>
+<tr><td>MZF RI</td><td>MUNIZ FREIRE</td><td>CRG DA ONCA S/N </td><td>S BAIRRO</td></tr>
+<tr><td>NVI MCL</td><td>NOVA VENECIA</td><td>MRO CORREGO DA LAPA S/N </td><td>ZONA RURAL</td></tr>
+<tr><td>NVI RGC</td><td>NOVA VENECIA</td><td>R GUARACY 152 </td><td>MARGARETH</td></tr>
+<tr><td>PHR MFD</td><td>PINHEIROS</td><td>MRO DO DENDINHO S/N </td><td>ZONA RURAL</td></tr>
+<tr><td>PHR PH0</td><td>PINHEIROS</td><td>EST ALTERNATIVA PINHEIROS S/N </td><td>CENTRO</td></tr>
+<tr><td>PHR RES</td><td>PINHEIROS</td><td>R EURICO SALES S/N </td><td>CENTRO</td></tr>
+<tr><td>PKN OI</td><td>PRESIDENTE KENNEDY</td><td>R JOSE COSTALONGA S/N </td><td>CENTRO</td></tr>
+<tr><td>PKN PES</td><td>PRESIDENTE KENNEDY</td><td>R ETA S/N </td><td>CENTRO</td></tr>
+<tr><td>PKO AGA</td><td>PEDRO CANARIO</td><td>AV ANTONIO GUEDES ALCOFORADO 206 </td><td>CENTRO</td></tr>
+<tr><td>PKO AT</td><td>PEDRO CANARIO</td><td>AV AMALIA NEGREIROS DE CASTRO 495 </td><td>CENTRO</td></tr>
+<tr><td>PKO BV</td><td>PEDRO CANARIO</td><td>ROD BR-101 KM 4 </td><td>CENTRO</td></tr>
+<tr><td>PLSA CM</td><td>SAO MATEUS</td><td>ROD BR101, KM 87 S/N </td><td>PAULISTA</td></tr>
+<tr><td>PMA EBT</td><td>PIUMA</td><td>R DANILO MONTEIRO DE CASTRO S/N </td><td>CENTRO</td></tr>
+<tr><td>PNC RJA</td><td>PANCAS</td><td>R JOSE AUGUSTO 317 </td><td>CENTRO</td></tr>
+<tr><td>RIL JAM</td><td>RIO BANANAL</td><td>R JOSE ANTONIO MATEDI S/N </td><td>CENTRO</td></tr>
+<tr><td>RIL MTV</td><td>RIO BANANAL</td><td>MRO DA TELEST S/N </td><td>PERIFERICO</td></tr>
+<tr><td>RVL EBT</td><td>RIO NOVO DO SUL</td><td>R PADRE GUIDO S/N </td><td>MÉPIS</td></tr>
+<tr><td>SADI EBT</td><td>SAO DOMINGOS DO NORTE</td><td>R CLERIO ALCANTARA ESPINOLO S/N </td><td>TORRE DA VIVO</td></tr>
+<tr><td>SEA AMS</td><td>SERRA</td><td>R ATALYDES MOREIRA DE SOUZA 245 </td><td>CIVIT</td></tr>
+<tr><td>SEA BTR</td><td>SERRA</td><td>ROD BR-101 KM 271 </td><td>CARAPINA</td></tr>
+<tr><td>SEA CIV</td><td>SERRA</td><td>AV CIVIT 160 </td><td>LARANJEIRAS</td></tr>
+<tr><td>SEA CPA</td><td>SERRA</td><td>AV GUARAPARI S/N </td><td>JARDIM LIMOEIRO</td></tr>
+<tr><td>SEA CRP</td><td>SERRA</td><td>R ESPIRITO SANTO 143 </td><td>JARDIM LIMOEIRO</td></tr>
+<tr><td>SEA ER2</td><td>SERRA</td><td>AV CENTRAL 744 </td><td>PARQUE RESIDENCIAL LARANJEIRAS</td></tr>
+<tr><td>SEA JAT</td><td>SERRA</td><td>R GUARACY SN </td><td>JARDIM ATLÂNTICO</td></tr>
+<tr><td>SEA KP</td><td>SERRA</td><td>R NATALINO RIBEIRO SN </td><td>PORTAL DE JACARAÍPE</td></tr>
+<tr><td>SEA LQ</td><td>SERRA</td><td>AV Kmer S/N </td><td>Cidade Continental-Setor Ásia</td></tr>
+<tr><td>SEA MER</td><td>SERRA</td><td>AV MERIDIONAL 10 </td><td>CID CONTINENTAL ST OCEANIA</td></tr>
+<tr><td>SEA NET</td><td>SERRA</td><td>R ALMERINDA ALVES DA SILVA QD 8 LOTE 4 </td><td>SAO DIOGO I</td></tr>
+<tr><td>SEA PGA</td><td>SERRA</td><td>R PITANGA S/N </td><td>CACAROCA</td></tr>
+<tr><td>SEA PSO</td><td>SERRA</td><td>R BAIXO GUANDU 16 </td><td>RESIDENCIAL VISTA DA SERRA</td></tr>
+<tr><td>SEA ROM</td><td>SERRA</td><td>R ROMANA 20 </td><td>NOVA ALMEIDA</td></tr>
+<tr><td>SEA RPA</td><td>SERRA</td><td>R PARA 1209 </td><td>JACARAIPE</td></tr>
+<tr><td>SEA SE7</td><td>SERRA</td><td>R J S/N </td><td>POLOPLAST</td></tr>
+<tr><td>SEA SMA</td><td>SERRA</td><td>AV JOAO PALACIO 300 </td><td>EURICO SALES</td></tr>
+<tr><td>SEA SMS</td><td>SERRA</td><td>AV EUDES SCHERRER DE SOUZA 2162 </td><td>COLINA DE LARANJEIRAS</td></tr>
+<tr><td>SLH MTV</td><td>SAO GABRIEL DA PALHA</td><td>MRO DA ESTACAO DA TV S/N </td><td>ZONA RURAL</td></tr>
+<tr><td>SLH SL2</td><td>SAO GABRIEL DA PALHA</td><td>R ALBERTO ANTONIO DA SILVA S/N </td><td>CENTRO</td></tr>
+<tr><td>SLY EBT</td><td>SANTA LEOPOLDINA</td><td>AV NICOLAU PAGUNG S/N </td><td>COCAL</td></tr>
+<tr><td>SLY PPI</td><td>SANTA LEOPOLDINA</td><td>R REGINALDO TERRA S/N </td><td>CENTRO</td></tr>
+<tr><td>SMJ EBT</td><td>SANTA MARIA DE JETIBA</td><td>SIT BONING S/N </td><td>SÃO SEBASTIÃO DE BELEM</td></tr>
+<tr><td>SMJ RFG</td><td>SANTA MARIA DE JETIBA</td><td>AV FREDERICO GRULKE S/N </td><td>CENTRO</td></tr>
+<tr><td>SMT JN</td><td>SAO MATEUS</td><td>AV JONES DOS SANTOS NEVES 613 </td><td>CENTRO</td></tr>
+<tr><td>SMT SD</td><td>SAO MATEUS</td><td>ROD ES 421 - SÃO MATEUS X CONCEIÇÃO DA BARRA KM43 </td><td>LITORANEO</td></tr>
+<tr><td>SMT SM9</td><td>SAO MATEUS</td><td>R ALFREDO MOTTA FILHO S/N </td><td>BOA VISTA</td></tr>
+<tr><td>SORE CL1</td><td>SAO ROQUE DO CANAA</td><td>SIT SÃO ROQUE DO CANAÃ S/N </td><td>CENTRO</td></tr>
+<tr><td>SORE SRC</td><td>SAO ROQUE DO CANAA</td><td>MRO ESTACAO COMERCIAL S/N </td><td>ZONA RURAL</td></tr>
+<tr><td>SORT RMR</td><td>SOORETAMA</td><td>R MANASSES DOS REIS 418 </td><td>CENTRO</td></tr>
+<tr><td>SORT SM</td><td>SOORETAMA</td><td>ROD BR-101 KM 124 </td><td>JUERANA</td></tr>
+<tr><td>SSD JFM</td><td>SAO JOSE DO CALCADO</td><td>R JOSE FERNANDO MEDINA S/N </td><td>CENTRO</td></tr>
+<tr><td>STA CEA</td><td>SANTA TERESA</td><td>AV CABECEIRA DO RIO BONITO S/N </td><td>VILA APARECIDINHA</td></tr>
+<tr><td>STA CL1</td><td>SANTA TERESA</td><td>EST DA LOMBARDIA S/N </td><td>CENTRO</td></tr>
+<tr><td>STA CL2</td><td>SANTA TERESA</td><td>AV STO ANTONIO DA PENHA S/N </td><td>DISTRITO DA PENHA</td></tr>
+<tr><td>STA RJV</td><td>SANTA TERESA</td><td>R JERONIMO VERVLOET 132 </td><td>CENTRO</td></tr>
+<tr><td>STA VVO</td><td>SANTA TERESA</td><td>EST DA LOMBARDIA S/N </td><td>CENTRO</td></tr>
+<tr><td>VGT EBT</td><td>VARGEM ALTA</td><td>AV TUFFY DAVID S/N </td><td>CENTRO</td></tr>
+<tr><td>VIA GRS</td><td>VIANA</td><td>ROD BR 262 KM KM 7,5 </td><td>GUARITAS</td></tr>
+<tr><td>VIA RGV</td><td>VIANA</td><td>R GETULIO VARGAS 81 </td><td>CENTRO</td></tr>
+<tr><td>VNI CL1</td><td>VENDA NOVA DO IMIGRANTE</td><td>AV PEDRO MINETE S/N </td><td>CENTRO</td></tr>
+<tr><td>VNI CL2</td><td>VENDA NOVA DO IMIGRANTE</td><td>ROD BR 262, KM 107 S/N </td><td>CENTRO</td></tr>
+<tr><td>VNI SFO</td><td>VENDA NOVA DO IMIGRANTE</td><td>SIT FALCHETO S/N </td><td>ZONA RURAL</td></tr>
+<tr><td>VNI TM</td><td>VENDA NOVA DO IMIGRANTE</td><td>ROD BR.262 KM 103 </td><td>CENTRO</td></tr>
+<tr><td>VTA 0VW</td><td>VITORIA</td><td>R FRANCISCO RUBIM 171 </td><td>BENTO FERREIRA</td></tr>
+<tr><td>VTA 1R9</td><td>VITORIA</td><td>AV PRESIDENTE FLORENTINO AVIDOS 350 </td><td>CENTRO</td></tr>
+<tr><td>VTA 1YV</td><td>VITORIA</td><td>AV NOSSA SENHORA DA PENHA 2035 </td><td>BARRO VERMELHO</td></tr>
+<tr><td>VTA ARB</td><td>VITORIA</td><td>AV RIO BRANCO 962 </td><td>CENTRO</td></tr>
+<tr><td>VTA AVT</td><td>VITORIA</td><td>R JOAO BASTOS VIEIRA 345 </td><td>ILHA DE SANTA MARIA</td></tr>
+<tr><td>VTA CAE</td><td>VITORIA</td><td>R MONTE DE OLIVEIRA 42 </td><td>ILHA DAS CAIEIRAS</td></tr>
+<tr><td>VTA DCR</td><td>VITORIA</td><td>R DEOZINO CORRÊA S/N </td><td>BELA VISTA</td></tr>
+<tr><td>VTA DM</td><td>VITORIA</td><td>AV DANTE MICHELINI 5500 </td><td>PARQUE INDUSTRIAL</td></tr>
+<tr><td>VTA FG</td><td>VITORIA</td><td>ROD SERAFIM DERENZE S/N </td><td>SAO PEDRO</td></tr>
+<tr><td>VTA FRB</td><td>VITORIA</td><td>R FRANCISCO RUBIM 171 </td><td>BENTO FERREIRA</td></tr>
+<tr><td>VTA FRS</td><td>VITORIA</td><td>R FORTUNATO RAMOS 30 </td><td>PRAIA DO CANTO</td></tr>
+<tr><td>VTA GK</td><td>VITORIA</td><td>R TACIANO ABAURRE 25 </td><td>ENSEADA DO SUA</td></tr>
+<tr><td>VTA JLC</td><td>VITORIA</td><td>AV JUDITH LEAO CASTELLO RIBEIRO 586 </td><td>JARDIM CAMBURI</td></tr>
+<tr><td>VTA JM</td><td>VITORIA</td><td>AV JERONIMO MONTEIRO 174 </td><td>CENTRO</td></tr>
+<tr><td>VTA JRM</td><td>VITORIA</td><td>R JOANA ROSALEM MIOZZI S/N </td><td>GOIABEIRAS</td></tr>
+<tr><td>VTA NSN</td><td>VITORIA</td><td>R TACIANO ABAURRE 25 </td><td>ENSEADA DO SUA</td></tr>
+<tr><td>VTA OR1</td><td>VITORIA</td><td>R OTO RAMOS 74 </td><td>MARUIPE</td></tr>
+<tr><td>VTA PCO</td><td>VITORIA</td><td>AV RIO BRANCO 1645 </td><td>CENTRO</td></tr>
+<tr><td>VTA VIX</td><td>VITORIA</td><td>AV FERNANDO FERRARI 0 </td><td>GOIABEIRAS</td></tr>
+<tr><td>VTA VTC</td><td>VITORIA</td><td>AV ADALBERTO SIMAO NADER 531 </td><td>CANTO</td></tr>
+<tr><td>VVA BAR</td><td>VILA VELHA</td><td>AV SÃO PEDRO SN </td><td>BARRAMARES</td></tr>
+<tr><td>VVA CAS</td><td>VILA VELHA</td><td>R CB AYLSON SIMOES 331 </td><td>CENTRO</td></tr>
+<tr><td>VVA DES</td><td>VILA VELHA</td><td>R DES AUGUSTO BOTELHO 610 </td><td>PRAIA DA COSTA</td></tr>
+<tr><td>VVA JBA</td><td>VILA VELHA</td><td>R CASTELO BRANCO S/N </td><td>JABURUNA</td></tr>
+<tr><td>VVA PCC</td><td>VILA VELHA</td><td>AV CARLOS LINDENBERG 4723 </td><td>NOSSA SENHORA DA PENHA</td></tr>
+<tr><td>VVA PI</td><td>VILA VELHA</td><td>ROD DO SOL 3700 </td><td>ITAPARICA</td></tr>
+<tr><td>VVA PMC</td><td>VILA VELHA</td><td>AV CORONEL PEDRO MAIA DE CARVALHO 14 </td><td>PRAIA DAS GAIVOTAS</td></tr>
+<tr><td>VVA POR</td><td>VILA VELHA</td><td>R PORTO ALEGRE 346 </td><td>PRAIA DE ITAPOA</td></tr>
+<tr><td>VVA RAZ</td><td>VILA VELHA</td><td>R VALE DO RIO DOCE S/N </td><td>SAO TORQUATO</td></tr>
+<tr><td>VVA REG</td><td>VILA VELHA</td><td>R REG FEIJO S/N </td><td>NOSSA SENHORA DA PENHA I</td></tr>
+<tr><td>VVA SMA</td><td>VILA VELHA</td><td>R 40 S/N </td><td>SANTA MONICA</td></tr>
+<tr><td>VVA UVL</td><td>VILA VELHA</td><td>ROD DO SOL 3700 </td><td>PRAIA DE ITAPARICA</td></tr>
+<tr><td>LNS BEB</td><td>LINHARES</td><td>ROD BR 101, KM 157 SN </td><td>BEBEDOURO</td></tr>
+<tr><td>CCA VEA</td><td>CARIACICA</td><td>AV PERIMETRAL S/N </td><td>VALE DA ESPERANCA</td></tr>
+<tr><td>VTA JM</td><td>VITORIA</td><td>AV JERONIMO MONTEIRO 174 </td><td>CENTRO</td></tr>
+<tr><td>ACZ GAG</td><td>ARACRUZ</td><td>R GENERAL ARISTIDES GUARANA LT 05 - QD B </td><td>CENTRO</td></tr>
+<tr><td>CIM BA</td><td>CACHOEIRO DE ITAPEMIRIM</td><td>RUA  HILARINA MARTINS BUENO 65 </td><td>AMARAL</td></tr>
+<tr><td>CNA SSO</td><td>COLATINA</td><td>R ABEL GONCALVES LORDEIRO S/N </td><td>JOSE DE ANCHIETA</td></tr>
+<tr><td>VTA JRM</td><td>VITORIA</td><td>R JOANA ROSALEM MIOZZI S/N </td><td>GOIABEIRAS</td></tr>
+<tr><td>SEA AMS</td><td>SERRA</td><td>R ATALYDES MOREIRA DE SOUZA 245 </td><td>CIVIT</td></tr>
+<tr><td>VNI CL1</td><td>VENDA NOVA DO IMIGRANTE</td><td>AV PEDRO MINETE S/N </td><td>CENTRO</td></tr>
+<tr><td>GUU CMS</td><td>GUAÇUI</td><td>RUA  MEIRELES S/N </td><td>CENTRO</td></tr>
+<tr><td>MRZSEBT</td><td>MARATAIZES</td><td>RUA  ANIBAL MACHADO, S/N </td><td>ILMENITA</td></tr>
+<tr><td>PKO AGA</td><td>PEDRO CANARIO</td><td>AV ANTONIO GUEDES ALCOFORADO 206 </td><td>CENTRO</td></tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
