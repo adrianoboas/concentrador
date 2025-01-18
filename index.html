@@ -3,63 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENDEREÇO DAS ESTAÇÕES ES</title>
+    <title>Endereço das Estações ES</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            background-color: #000;
+            color: #fff;
         }
+
+        h2 {
+            text-align: center;
+            color: #fff;
+        }
+
+        #searchInput {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            width: 60%;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        #searchInput::placeholder {
+            color: #ccc;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 20px;
         }
+
         th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
             text-align: left;
+            padding: 12px;
+            border: 1px solid #fff;
         }
+
         th {
-            background-color: #f2f2f2;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
         }
-        #searchInput {
-            margin-bottom: 12px;
-            padding: 8px;
-            width: 50%;
+
+        td {
+            background-color: #111;
+            color: #fff;
+        }
+
+        tr.visible {
+            background-color: #444;
         }
     </style>
     <script>
         function searchTable() {
-            const input = document.getElementById("searchInput");
-            const filter = input.value.toUpperCase();
+            const input = document.getElementById("searchInput").value.toUpperCase();
             const table = document.getElementById("dataTable");
             const rows = table.getElementsByTagName("tr");
 
-            for (let i = 1; i < rows.length; i++) { // Loop começa em 1 para ignorar o cabeçalho
-                const cells = rows[i].getElementsByTagName("td");
-                let found = false;
+            for (let i = 1; i < rows.length; i++) {
+                const row = rows[i];
+                const cells = row.getElementsByTagName("td");
+                let match = false;
 
-                for (let j = 0; j < cells.length; j++) {
-                    const cell = cells[j];
-                    if (cell.textContent.toUpperCase().indexOf(filter) > -1) {
-                        found = true;
+                row.classList.remove("visible");
+
+                for (let cell of cells) {
+                    if (cell.textContent.toUpperCase().includes(input)) {
+                        match = true;
+                        break;
                     }
                 }
 
-                if (found) {
-                    rows[i].style.display = "";
+                if (match) {
+                    row.style.display = "";
+                    row.classList.add("visible");
                 } else {
-                    rows[i].style.display = "none";
+                    row.style.display = "none";
                 }
             }
         }
     </script>
 </head>
 <body>
-
-    <h2>ENDEREÇO DAS ESTAÇÕES ES</h2>
-
+    <h2>Endereço das Estações ES</h2>
     <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Pesquisar na tabela..." />
-
     <table id="dataTable">
         <thead>
             <tr>
@@ -70,7 +102,32 @@
             </tr>
         </thead>
         <tbody>
-           <tr><td>AAA EBT</td><td>APIACA</td><td>R VEREADOR DANIEL TABEELDI S/N </td><td>CENTRO</td></tr>
+            <tr>
+                <td>AAA EBT</td>
+                <td>APIACA</td>
+                <td>R VEREADOR DANIEL TABEELDI S/N</td>
+                <td>CENTRO</td>
+            </tr>
+            <tr>
+                <td>AAA MTL</td>
+                <td>APIACA</td>
+                <td>R MARECHAL CANDIDO RONDON 0</td>
+                <td>CENTRO</td>
+            </tr>
+            <tr>
+                <td>ACZ AG</td>
+                <td>ARACRUZ</td>
+                <td>AV ARISTIDES GUARANA 137</td>
+                <td>CENTRO</td>
+            </tr>
+            <tr>
+                <td>ACZ BR</td>
+                <td>ARACRUZ</td>
+                <td>ROD ARACRUZ - BARRA DO RIACHO KM 25</td>
+                <td>BARRA DO RIACHO</td>
+            </tr>
+			
+<tr><td>AAA EBT</td><td>APIACA</td><td>R VEREADOR DANIEL TABEELDI S/N </td><td>CENTRO</td></tr>
 <tr><td>AAA MTL</td><td>APIACA</td><td>R MARECHAL CANDIDO RONDON 0 </td><td>CENTRO</td></tr>
 <tr><td>ACZ AG</td><td>ARACRUZ</td><td>AV ARISTIDES GUARANA 137 </td><td>CENTRO</td></tr>
 <tr><td>ACZ BR</td><td>ARACRUZ</td><td>ROD ARACRUZ - BARRA DO RIACHO KM 25 </td><td>BARRA DO RIACHO</td></tr>
@@ -78,7 +135,7 @@
 <tr><td>ACZ GAG</td><td>ARACRUZ</td><td>R GENERAL ARISTIDES GUARANA LT 05 - QD B </td><td>CENTRO</td></tr>
 <tr><td>ACZ TBS</td><td>ARACRUZ</td><td>R TOLENTINO BISPO DA SILVA SN </td><td>JEQUITIBA</td></tr>
 <tr><td>AHE 0ED</td><td>ANCHIETA</td><td>R FELICIANO GARCIA S/N </td><td>JARDIM DAS OLIVEIRAS</td></tr>
-<tr><td>AHE DGF</td><td>ANCHIETA</td><td>ROD DOS CASTELHANOS, KM 1,5 S/N </td><td>ALEGRE</td></tr>
+<tr><td>AHE DGF</td><td>ANCHIETA</td><td>ROD DOS CASTELHANOS KM 15 S/N </td><td>ALEGRE</td></tr>
 <tr><td>AHE EBT</td><td>ANCHIETA</td><td>AV RAUTA S/N </td><td>CENTRO</td></tr>
 <tr><td>AHE EMB</td><td>ANCHIETA</td><td>R ROSA BRANCA LOTE N - 40 </td><td>IRIRI</td></tr>
 <tr><td>ALR ALG</td><td>ALEGRE</td><td>R PROJETADA DO CAMPO DE AVIAÇÃO S/N </td><td>CENTRO</td></tr>
@@ -98,7 +155,7 @@
 <tr><td>CAVN MC</td><td>JOAO NEIVA</td><td>MRO CAVALINHO S/N </td><td>ZONA RURAL</td></tr>
 <tr><td>CCA CL5</td><td>CARIACICA</td><td>ROD GOVERNADOR JOSE HENRIQUE SETTE S/N </td><td>PLANETA</td></tr>
 <tr><td>CCA CLC</td><td>CARIACICA</td><td>ROD BR-101 NORTE - CONTORNO - LADO PAR 294 </td><td>TABAJARA</td></tr>
-<tr><td>CCA CMX</td><td>CARIACICA</td><td>ROD BR 101, KM 281 S/N </td><td>PORTO ENGENHO</td></tr>
+<tr><td>CCA CMX</td><td>CARIACICA</td><td>ROD BR 101 KM 281 S/N </td><td>PORTO ENGENHO</td></tr>
 <tr><td>CCA EB</td><td>CARIACICA</td><td>R CINQUENTA E NOVE SN </td><td>NOVA ROSA DA PENHA I</td></tr>
 <tr><td>CCA EBT</td><td>CARIACICA</td><td>ROD BR 262 6555 </td><td>VILA CAPIXABA</td></tr>
 <tr><td>CCA EY</td><td>CARIACICA</td><td>R DO MORRO S/N </td><td>FLEXAL</td></tr>
@@ -140,7 +197,7 @@
 <tr><td>IIH EBT</td><td>IBITIRAMA</td><td>R PROJETADA S/N </td><td>CENTRO</td></tr>
 <tr><td>IIU JA</td><td>IBIRACU</td><td>R JOAO ALVES DA M JUNIOR S/N </td><td>SEDE</td></tr>
 <tr><td>IIU RCM</td><td>IBIRACU</td><td>R CEZAR MATIUZZI S/N </td><td>CENTRO</td></tr>
-<tr><td>IKA EBT</td><td>IBATIBA</td><td>ROD BR 262, KM 162 S/N </td><td>MORRO DO CEMITERIO</td></tr>
+<tr><td>IKA EBT</td><td>IBATIBA</td><td>ROD BR 262 KM 162 S/N </td><td>MORRO DO CEMITERIO</td></tr>
 <tr><td>IKA TM</td><td>IBATIBA</td><td>AV MARIO ANDREAZZA 226 </td><td>CENTRO</td></tr>
 <tr><td>INW FMA</td><td>ITARANA</td><td>FAZ MATUTINA S/N </td><td>ZONA RURAL</td></tr>
 <tr><td>INW INA</td><td>ITARANA</td><td>LRG DA PALMEIRA S/N </td><td>CENTRO</td></tr>
@@ -157,7 +214,7 @@
 <tr><td>JUE UPU</td><td>JAGUARE</td><td>R UIRAPURU S/N </td><td>CENTRO</td></tr>
 <tr><td>LJT EBT</td><td>LARANJA DA TERRA</td><td>R OLAVO BILAC S/N </td><td>CENTRO</td></tr>
 <tr><td>LJT MTL</td><td>LARANJA DA TERRA</td><td>R PERMINIO ROGERIO S/N </td><td>CENTRO</td></tr>
-<tr><td>LNS BEB</td><td>LINHARES</td><td>ROD BR 101, KM 157 S/N </td><td>BEBEDOURO</td></tr>
+<tr><td>LNS BEB</td><td>LINHARES</td><td>ROD BR 101 KM 157 S/N </td><td>BEBEDOURO</td></tr>
 <tr><td>LNS CCS</td><td>LINHARES</td><td>EST POVOACAO DEGREDO KM 08 </td><td>DISTRITO POVOACAO</td></tr>
 <tr><td>LNS CL2</td><td>LINHARES</td><td>AV RUI BARBOSA S/N </td><td>CENTRO</td></tr>
 <tr><td>LNS FC</td><td>LINHARES</td><td>AV JOAO FELIPE CALMON 820 </td><td>CENTRO</td></tr>
@@ -187,7 +244,7 @@
 <tr><td>PKO AGA</td><td>PEDRO CANARIO</td><td>AV ANTONIO GUEDES ALCOFORADO 206 </td><td>CENTRO</td></tr>
 <tr><td>PKO AT</td><td>PEDRO CANARIO</td><td>AV AMALIA NEGREIROS DE CASTRO 495 </td><td>CENTRO</td></tr>
 <tr><td>PKO BV</td><td>PEDRO CANARIO</td><td>ROD BR-101 KM 4 </td><td>CENTRO</td></tr>
-<tr><td>PLSA CM</td><td>SAO MATEUS</td><td>ROD BR101, KM 87 S/N </td><td>PAULISTA</td></tr>
+<tr><td>PLSA CM</td><td>SAO MATEUS</td><td>ROD BR101 KM 87 S/N </td><td>PAULISTA</td></tr>
 <tr><td>PMA EBT</td><td>PIUMA</td><td>R DANILO MONTEIRO DE CASTRO S/N </td><td>CENTRO</td></tr>
 <tr><td>PNC RJA</td><td>PANCAS</td><td>R JOSE AUGUSTO 317 </td><td>CENTRO</td></tr>
 <tr><td>RIL JAM</td><td>RIO BANANAL</td><td>R JOSE ANTONIO MATEDI S/N </td><td>CENTRO</td></tr>
@@ -232,10 +289,10 @@
 <tr><td>STA RJV</td><td>SANTA TERESA</td><td>R JERONIMO VERVLOET 132 </td><td>CENTRO</td></tr>
 <tr><td>STA VVO</td><td>SANTA TERESA</td><td>EST DA LOMBARDIA S/N </td><td>CENTRO</td></tr>
 <tr><td>VGT EBT</td><td>VARGEM ALTA</td><td>AV TUFFY DAVID S/N </td><td>CENTRO</td></tr>
-<tr><td>VIA GRS</td><td>VIANA</td><td>ROD BR 262 KM KM 7,5 </td><td>GUARITAS</td></tr>
+<tr><td>VIA GRS</td><td>VIANA</td><td>ROD BR 262 KM KM 75 </td><td>GUARITAS</td></tr>
 <tr><td>VIA RGV</td><td>VIANA</td><td>R GETULIO VARGAS 81 </td><td>CENTRO</td></tr>
 <tr><td>VNI CL1</td><td>VENDA NOVA DO IMIGRANTE</td><td>AV PEDRO MINETE S/N </td><td>CENTRO</td></tr>
-<tr><td>VNI CL2</td><td>VENDA NOVA DO IMIGRANTE</td><td>ROD BR 262, KM 107 S/N </td><td>CENTRO</td></tr>
+<tr><td>VNI CL2</td><td>VENDA NOVA DO IMIGRANTE</td><td>ROD BR 262 KM 107 S/N </td><td>CENTRO</td></tr>
 <tr><td>VNI SFO</td><td>VENDA NOVA DO IMIGRANTE</td><td>SIT FALCHETO S/N </td><td>ZONA RURAL</td></tr>
 <tr><td>VNI TM</td><td>VENDA NOVA DO IMIGRANTE</td><td>ROD BR.262 KM 103 </td><td>CENTRO</td></tr>
 <tr><td>VTA 0VW</td><td>VITORIA</td><td>R FRANCISCO RUBIM 171 </td><td>BENTO FERREIRA</td></tr>
@@ -270,20 +327,14 @@
 <tr><td>VVA REG</td><td>VILA VELHA</td><td>R REG FEIJO S/N </td><td>NOSSA SENHORA DA PENHA I</td></tr>
 <tr><td>VVA SMA</td><td>VILA VELHA</td><td>R 40 S/N </td><td>SANTA MONICA</td></tr>
 <tr><td>VVA UVL</td><td>VILA VELHA</td><td>ROD DO SOL 3700 </td><td>PRAIA DE ITAPARICA</td></tr>
-<tr><td>LNS BEB</td><td>LINHARES</td><td>ROD BR 101, KM 157 SN </td><td>BEBEDOURO</td></tr>
-<tr><td>CCA VEA</td><td>CARIACICA</td><td>AV PERIMETRAL S/N </td><td>VALE DA ESPERANCA</td></tr>
-<tr><td>VTA JM</td><td>VITORIA</td><td>AV JERONIMO MONTEIRO 174 </td><td>CENTRO</td></tr>
-<tr><td>ACZ GAG</td><td>ARACRUZ</td><td>R GENERAL ARISTIDES GUARANA LT 05 - QD B </td><td>CENTRO</td></tr>
+<tr><td>LNS BEB</td><td>LINHARES</td><td>ROD BR 101 KM 157 SN </td><td>BEBEDOURO</td></tr>
 <tr><td>CIM BA</td><td>CACHOEIRO DE ITAPEMIRIM</td><td>RUA  HILARINA MARTINS BUENO 65 </td><td>AMARAL</td></tr>
-<tr><td>CNA SSO</td><td>COLATINA</td><td>R ABEL GONCALVES LORDEIRO S/N </td><td>JOSE DE ANCHIETA</td></tr>
-<tr><td>VTA JRM</td><td>VITORIA</td><td>R JOANA ROSALEM MIOZZI S/N </td><td>GOIABEIRAS</td></tr>
-<tr><td>SEA AMS</td><td>SERRA</td><td>R ATALYDES MOREIRA DE SOUZA 245 </td><td>CIVIT</td></tr>
-<tr><td>VNI CL1</td><td>VENDA NOVA DO IMIGRANTE</td><td>AV PEDRO MINETE S/N </td><td>CENTRO</td></tr>
 <tr><td>GUU CMS</td><td>GUAÇUI</td><td>RUA  MEIRELES S/N </td><td>CENTRO</td></tr>
-<tr><td>MRZSEBT</td><td>MARATAIZES</td><td>RUA  ANIBAL MACHADO, S/N </td><td>ILMENITA</td></tr>
-<tr><td>PKO AGA</td><td>PEDRO CANARIO</td><td>AV ANTONIO GUEDES ALCOFORADO 206 </td><td>CENTRO</td></tr>
+<tr><td>MRZSEBT</td><td>MARATAIZES</td><td>RUA  ANIBAL MACHADO S/N </td><td>ILMENITA</td></tr>
+
+
+			
         </tbody>
     </table>
-
 </body>
 </html>
